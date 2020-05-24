@@ -1,0 +1,23 @@
+type Role {
+  id: String
+  name: String
+}
+
+type User {
+  firstName: String
+  lastName: String
+  role: Role
+}
+
+input AddUserInput {
+  firstName: String
+  lastName: String
+  role: UserRole
+}
+type Mutation {
+  addUser(addUserInput: AddUserInput): User
+}
+
+type Query {
+  getUsers: [User]
+}
